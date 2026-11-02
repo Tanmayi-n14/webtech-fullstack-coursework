@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>My first AEL webpage </title>
+			
+	</head>	
+	
+	<body>
+	
+	<h2 id="id02"></h2>
+		
+	<h1 class="cls01">HI... h2 font</h1>
+	
+	<h3></h3>
+	
+	<script type="text/javascript"> 
+	
+	document.addEventListener("click",func1);
+	
+	function func1()
+	{
+		document.getElementsByTagName("h2")[0].innerHTML="I am listening";
+	}
+	
+
+	document.getElementsByTagName("h1")[0].addEventListener("click",func2);
+	function func2()
+	{
+		document.getElementsByTagName("h3")[0].innerHTML="I am not listening";
+		document.getElementsByTagName("body")[0].style.backgroundColor="lightblue";
+	}
+
+	
+	
+	
+	</script>
+		
+	</body>
+	
+</html>
+
+		

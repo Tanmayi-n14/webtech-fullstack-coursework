@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+    </body>
+    <script>
+        var str='{"name":"Thor Ragnarok","cast":"Chris Hemsworth"}';
+        var obj=JSON.parse(str);
+        document.getElementById("demo1").innerHTML=obj.name;
+        
+        obj.year="2017"
+        obj.rating="7.95"
+        str=JSON.stringify(obj);
+        document.getElementById("demo2").innerHTML=str;
+    </script>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samarpana Run Registration</title>
+    
+    <style>
+        /* Basic Reset and Font */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main Container for Form */
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            overflow: hidden; /* Ensures the form respects the rounded corners */
+        }
+        
+        /* --- NEW TRI-COLOR HEADER STYLES --- */
+        .header-container {
+            text-align: center;
+        }
+
+        .header-band {
+            padding: 12px 20px;
+            font-weight: bold;
+        }
+        
+        .band-saffron {
+            background-color: #FF9933; /* Saffron */
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .band-white {
+            background-color: #FFFFFF; /* White */
+            color: #333;
+            border-bottom: 1px solid #eee;
+            border-top: 1px solid #eee;
+        }
+        
+        #live-time {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        .band-green {
+            background-color: #138808; /* Green */
+            color: white;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        /* --- END OF HEADER STYLES --- */
+
+
+        /* Form Styling */
+        form {
+            padding: 30px 40px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group .required {
+            color: #dc3545;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #138808;
+            box-shadow: 0 0 5px rgba(19, 136, 8, 0.2);
+        }
+
+        /* T-shirt Table */
+        .tshirt-table-container {
+            margin: 30px 0;
+        }
+
+        .tshirt-table-container h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        thead {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Checkbox */
+        .form-group-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        #confirm {
+            width: auto;
+        }
+
+        /* Buttons */
+        .form-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .btn-reset {
+            background-color: #dc3545;
+            color: white;
+        }
+        .btn-reset:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 10px;
+            }
+            form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-container">
+            <div class="header-band band-saffron">
+                <h1>Samarpana Run</h1>
+            </div>
+            <div class="header-band band-white">
+                <p>For the Indian Army!</p>
+                <p id="live-time">Loading time...</p>
+            </div>
+            <div class="header-band band-green">
+                <h2>Registration Form</h2>
+            </div>
+        </div>
+
+        <form id="registration-form" novalidate>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="full-name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="full-name" placeholder="e.g., Aanya Rao" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" placeholder="e.g., aanya@college.edu" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile Number <span class="required">*</span></label>
+                    <input type="tel" id="mobile" placeholder="e.g., 9876543210" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth <span class="required">*</span></label>
+                    <input type="date" id="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="university">University/Organization <span class="required">*</span></label>
+                    <input type="text" id="university" placeholder="e.g., PES University" required>
+                </div>
+                <div class="form-group">
+                    <label for="usn">USN (College ID) <span class="required">*</span></label>
+                    <input type="text" id="usn" placeholder="e.g., PES1UG24CS999" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City <span class="required">*</span></label>
+                    <input type="text" id="city" placeholder="e.g., Bengaluru" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State <span class="required">*</span></label>
+                    <input type="text" id="state" placeholder="e.g., Karnataka" required>
+                </div>
+                <div class="form-group">
+                    <label for="pincode">Pincode <span class="required">*</span></label>
+                    <input type="text" id="pincode" placeholder="e.g., 560085" required>
+                </div>
+                <div class="form-group">
+                    <label for="tshirt-size">T-shirt Size <span class="required">*</span></label>
+                    <select id="tshirt-size" required>
+                        <option value="" disabled selected>Select size</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                        <option value="3XL">3XL</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="tshirt-table-container">
+                <h3>T-shirt Size Chart</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Chest (in)</th>
+                            <th>Chest (cm)</th>
+                            <th>Length (cm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>XS</td><td>34"</td><td>86cm</td><td>65cm</td></tr>
+                        <tr><td>S</td><td>36"</td><td>91cm</td><td>67cm</td></tr>
+                        <tr><td>M</td><td>38"</td><td>97cm</td><td>70cm</td></tr>
+                        <tr><td>L</td><td>40"</td><td>102cm</td><td>72cm</td></tr>
+                        <tr><td>XL</td><td>42"</td><td>107cm</td><td>75cm</td></tr>
+                        <tr><td>XXL</td><td>44"</td><td>112cm</td><td>77cm</td></tr>
+                        <tr><td>3XL</td><td>46"</td><td>117cm</td><td>79cm</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-group-checkbox">
+                <input type="checkbox" id="confirm" required>
+                <label for="confirm">I confirm the information is accurate and agree to the event terms and waiver. <span class="required">*</span></label>
+            </div>
+
+            <div class="form-buttons">
+                <button type="reset" class="btn btn-reset">Reset Form</button>
+                <button type="submit" class="btn btn-submit">Submit Form</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Live Clock Functionality ---
+            const liveTimeElement = document.getElementById('live-time');
+
+            function updateTime() {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('en-US', { hour12: true, hour: '2-digit', minute: '2-digit' });
+                const dateString = now.toLocaleDateString('en-US'); // US format: mm/dd/yyyy
+                liveTimeElement.textContent = `${dateString}, ${timeString}`;
+            }
+
+            // Update time immediately and then every second
+            updateTime();
+            setInterval(updateTime, 1000);
+
+            // --- Form Validation ---
+            const form = document.getElementById('registration-form');
+
+            form.addEventListener('submit', (event) => {
+                // Prevent the default form submission action
+                event.preventDefault();
+
+                // Perform validation and proceed if successful
+                if (validateForm()) {
+                    alert('Registration Successful! Thank you for joining the Samarpana Run.');
+                    form.reset(); // Clear the form after successful submission
+                }
+            });
+
+            function validateForm() {
+                const requiredFields = [
+                    { id: 'full-name', name: 'Full Name' },
+                    { id: 'email', name: 'Email' },
+                    { id: 'mobile', name: 'Mobile Number' },
+                    { id: 'dob', name: 'Date of Birth' },
+                    { id: 'university', name: 'University/Organization' },
+                    { id: 'usn', name: 'USN (College ID)' },
+                    { id: 'city', name: 'City' },
+                    { id: 'state', name: 'State' },
+                    { id: 'pincode', name: 'Pincode' },
+                    { id: 'tshirt-size', name: 'T-shirt Size' }
+                ];
+
+                for (const field of requiredFields) {
+                    const inputElement = document.getElementById(field.id);
+                    if (inputElement.value.trim() === '') {
+                        alert(`Please fill in the required field: ${field.name}`);
+                        inputElement.focus();
+                        return false;
+                    }
+                }
+
+                const confirmCheckbox = document.getElementById('confirm');
+                if (!confirmCheckbox.checked) {
+                    alert('You must confirm the information and agree to the terms.');
+                    confirmCheckbox.focus();
+                    return false;
+                }
+                return true;
+            }
+        });
+    </script>
+</body>
+</html>

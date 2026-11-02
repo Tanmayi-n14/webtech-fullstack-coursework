@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>My first DOM webpage </title>
+			
+	</head>	
+	
+	<body>
+		
+		<h1 class="cls01">hiiiiiiiiiiiiiiiii</h1>
+		
+		<h2 class="cls02">hi</h2>
+		
+		<h3 class="cls02">h3 cls02</h3>
+		
+		<h4 class="cls03">h4 cls03</h4>
+		
+		<h5 id="id03">hi</h5>
+		
+		<p class="cls03">p cls03</p>
+		
+		<h1 id="id01"></h1>
+		
+		<h1 id="id02">hi</h1>
+		
+		<button onclick= "document.getElementsByTagName('button')[0].innerHTML='I was clicked....'"> click me -1 </button>
+		
+		<button ondblclick= "func1()"> click me -2 </button>
+		
+		<button onmouseover= "func2()" onmouseout= "func3()"> click me -3 </button>
+		
+		
+		<script type="text/javascript"> 
+		
+		function func1()
+		{
+			document.getElementsByTagName('button')[1].innerHTML='I was double clicked....';
+			document.getElementsByTagName("body")[0].style.backgroundColor="yellow";
+		}
+		
+		function func2()
+		{
+			document.getElementsByTagName('button')[2].innerHTML='hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii';
+		}
+		
+		function func3()
+		{
+			document.getElementsByTagName('button')[2].innerHTML=' click me -3 ';
+		}
+		
+		document.getElementById("id01").innerHTML="HELLO WORLD...."
+		
+		document.getElementsByClassName("cls01")[0].innerHTML="HELLO WORLD1...."
+		
+		document.getElementById("id02").style.color="red";
+		
+		document.getElementById("id02").style.backgroundColor="lightblue";
+		
+		var demo1 = document.getElementsByClassName("cls02");
+		
+		for (i=0; i<demo1.length;i++)
+		{
+			demo1[i].innerHTML="PESU";
+			demo1[i].style.color="pink";
+		}
+		
+		var demo2 = document.getElementsByTagName("h3");
+		
+		for (i=0; i<demo2.length;i++)
+		{
+			demo2[i].style.backgroundColor="yellow";
+		}
+		
+		document.querySelector("h1.cls01").style.color="blue";
+		
+		document.querySelector("#id03").style.color="red";
+		
+		var demo3 = document.querySelectorAll(".cls03");
+		
+		for (i=0; i<demo3.length;i++)
+		{
+			demo3[i].style.color="purple";
+		}
+		
+		
+			
+		</script>
+		
+		
+		<p> .... </p>
+		
+	</body>
+	
+</html>
+
+		

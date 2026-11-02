@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>My first geolocation webpage </title>
+			
+	</head>	
+	
+	<body>
+	
+	<p> Click to get your coordinates </p>
+	
+	<button onclick = "getLocation()"> Get Current Location </button>
+	
+	<button onclick = "getLiveLocation()"> Get Live Location </button>
+	
+	<p id="demo"></p>
+	
+	
+	<script>
+		const x = document.getElementById("demo");
+		
+		function getLocation()
+		{
+			if (navigator.geolocation)
+			{
+				navigator.geolocation.getCurrentPosition(showPosition); //getCurrentPosition gives current position and watchPosition gives live position
+			}
+			else
+			{
+				x.innerHTML = "Geolocation not working";
+			}
+		}
+		
+		function getLiveLocation()
+		{
+			if (navigator.geolocation)
+			{
+				navigator.geolocation.watchPosition(showPosition); //getCurrentPosition gives current position and watchPosition gives live position
+			}
+			else
+			{
+				x.innerHTML = "Geolocation not working";
+			}
+		}
+		
+		function showPosition(position)
+		{
+			x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude:"  + position.coords.longitude;
+		}
+		
+	</script>
+	
+	</body>
+	
+</html>	

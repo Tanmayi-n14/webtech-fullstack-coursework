@@ -1,0 +1,35 @@
+{
+  "name": "webtech-fullstack-coursework",
+  "version": "1.0.0",
+  "description": "Full-Stack Web Technologies Coursework: HTML5, CSS3, DOM, React, Node.js Core, Express, Pug, Multer, and MongoDB CRUD",
+  "main": "05-express-and-templating/express_get.js",
+  "scripts": {
+    "start": "node 05-express-and-templating/express_get.js",
+    "banana2": "node 08-coursework-assignments/banana-problem-2/formdata_assignment.js",
+    "multer": "node 06-file-upload-multer/file_upload.js"
+  },
+  "keywords": [
+    "web-technologies",
+    "html5",
+    "css3",
+    "javascript",
+    "react",
+    "nodejs",
+    "express",
+    "pug",
+    "multer",
+    "mongodb"
+  ],
+  "author": "Tanmayi Nagabhairava",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "body-parser": "^1.20.2",
+    "chalk": "^4.1.2",
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "multer": "^1.4.5-lts.1",
+    "pug": "^3.0.2",
+    "validator": "^13.11.0"
+  }
+}

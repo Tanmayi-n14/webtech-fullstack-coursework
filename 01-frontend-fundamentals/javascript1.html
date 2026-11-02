@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<title>My first Java script webpage </title>
+		
+		<!--<script type="text/javascript" src="java1.js"> </script>  <br/>  (dont do both kind of javascript... the external and the internal ones  -->
+		
+		<script type="text/javascript">
+		
+		
+			document.write("Hello World 1 <br>")
+			console.log("Hello World 1")
+		
+			const a=20
+			var b=10
+			let c=5
+			
+			var b=15
+			c=10
+			
+			if (b>c)
+			document.write(b +" is greater than "+ c + "<br>") 
+			else
+			document.write(c +" is greater than "+ b + "<br>")
+			
+			
+			//function
+			function add1(a,b)
+			{
+				return a+b
+			}
+			c=add1(1,2)
+			document.write("Value is "+ c + "<br>")
+			
+			//arrow function
+			var add2=(a,b)=>
+			{
+				return a+b
+			}
+			c=add2(1,2)
+			document.write("Value is "+ c + "<br>")
+			
+			//unnamed function
+			var add3=function(a,b)
+			{
+				return a+b
+			}
+			c=add3(1,2)
+			document.write("Value is "+ c + "<br>")
+			
+			//arrays
+			var fruits=["mango","apple","orange"]
+			document.write(fruits + "<br>")
+			
+			fruits.push("grapes","cherry")
+			document.write(fruits + "<br>")
+			
+			fruits.pop()
+			document.write(fruits + "<br>")
+			
+			fruits.sort()
+			document.write(fruits + "<br>")
+			
+			fruits.shift()
+			document.write(fruits + "<br>")
+			
+			fruits.unshift("cherry","apple")
+			document.write(fruits + "<br>")
+			
+			
+			
+			var F1=["a","b","c"]
+			var F2=["d","e","f"]
+			F3=F1.concat(F2) 
+			document.write(F3 + "<br>")  //can also do document.write(F1.concat(F2))
+			
+			f_new=fruits.slice(0,3)
+			document.write(f_new + "<br>")
+			
+			
+			//object literals
+			var emp=
+			{
+				"name":"ABC",
+				"clg":"PES",
+				"fun1":function()
+				{
+					document.write(this.name + " " + this.clg + "<br>")  //can also write emp.name or emp.clg
+				}
+			}
+			
+			emp.fun1()
+			
+			
+			//object constraints
+			
+			
+			function emp1(fname,lname)
+			{
+				this.firstname=fname,
+				this.lastname=lname,
+				this.func2=function()
+				{
+					document.write(this.firstname + " " + this.lastname + "<br>") 
+				}
+			}
+			
+			var apple=new emp1("PAC" , "PESU")
+			
+			apple.func2()
+			
+		</script>
+		
+	</head>	
+	
+	<body>
+		
+		<p> .... </p>
+		
+	</body>
+	
+</html>
