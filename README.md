@@ -134,4 +134,6 @@ Open any HTML file in `01-frontend-fundamentals/`, `02-async-js-and-apis/`, or `
 ---
 
 ## 👤 Author
-* **Tanmayi Nagabhairava**
+
+* **Tanmayi Nagabhairava** ([@Tanmayi-n14](https://github.com/Tanmayi-n14)) — `PES1UG24CS493`
+* Department of Computer Science & Engineering, PES University
